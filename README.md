@@ -164,6 +164,8 @@ adk deploy agent_engine . --region=us-central1
 
 Once deployment is complete, the console will print your unique **Agent Endpoint Address**. You can monitor and access this deployment directly in the Cloud Console under **Agent Platform** -> **Deployments**.
 
+<img width="1029" height="652" alt="Screenshot 2026-08-17 at 10 03 32 PM" src="https://github.com/user-attachments/assets/d375cb7b-487f-4f4b-a33c-b6f1ca5594a5" />
+
 ---
 
 ## Testing & Playground
