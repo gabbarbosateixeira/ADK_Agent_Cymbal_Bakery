@@ -1,4 +1,4 @@
-# 🤖 Cymbal Catering Agent: ADK & Agent Runtime Deployment
+# Cymbal Catering Agent: ADK & Agent Runtime Deployment
 
 This repository demonstrates how to build and deploy an enterprise-grade AI assistant utilizing the **Google Agent Development Kit (ADK)** and the **Agent Runtime (Reasoning Engine)**.
 
@@ -14,7 +14,7 @@ The agent leverages your custom **Model Context Protocol (MCP)** server, securel
 
 ---
 
-## 💡 Deep Dive: Why Use MCP & the Agent Registry with Google ADK?
+## Deep Dive: Why Use MCP & the Agent Registry with Google ADK?
 
 In traditional AI agent development, connecting a LLM to external transactional databases or CRM systems requires manually writing, testing, and maintaining complex custom API client wrappers. 
 
@@ -40,7 +40,7 @@ mcp_toolset = registry.get_mcp_toolset(
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before deploying the agent, ensure the following prerequisites are met:
 1. **MCP Server Deployed:** Your custom MCP server must be deployed on Cloud Run and reachable (See the [Cymbal Catering MCP Server Project](https://github.com/gabbarbosateixeira/cymbal-catering-mcp)).
@@ -50,7 +50,7 @@ Before deploying the agent, ensure the following prerequisites are met:
 
 ---
 
-## 🚀 Step-by-Step Deployment Guide
+## Step-by-Step Deployment Guide
 
 ### Step 1: Clone the Repository
 Create a directory for your agent project and clone this repository:
@@ -80,7 +80,7 @@ python3 -c "import agent"
 
 ---
 
-## 🔐 Step 5: Configure IAM & Permissions
+## Step 5: Configure IAM & Permissions
 
 For your deployed Agent to read toolspecs from the Registry and invoke your Cloud Run MCP service, you must assign the correct IAM bindings to the respective Google Service Accounts. 
 
@@ -110,13 +110,13 @@ gcloud projects add-iam-policy-binding $PROJECT_ID \
   --role="roles/agentregistry.viewer"
 ```
 
-### 🔑 Security Role Reference:
+### Security Role Reference:
 * **`roles/agentregistry.viewer`**: Allows service agents to read schemas, metadata, and configuration parameters of the registered MCP tools.
 * **`roles/run.invoker`**: Required on the target Cloud Run service (`cymbal-mcp`) so the Reasoning Engine runtime can send authenticated POST requests to trigger tools.
 
 ---
 
-## 🔓 Step 6: Demo Mode - Bypassing Sandbox Restrictions
+## Step 6: Demo Mode - Bypassing Sandbox Restrictions
 
 If you are running this demo in an **Argolis Sandbox**, Domain Restricted Sharing (DRS) will prevent public, unauthenticated access. Use these toggles to quickly open access for your demo and restore them immediately afterward.
 
@@ -151,7 +151,7 @@ gcloud resource-manager org-policies delete constraints/iam.allowedPolicyMemberD
 
 ---
 
-## 🚀 Step 7: Deploy Your Agent to Agent Runtime
+## Step 7: Deploy Your Agent to Agent Runtime
 
 Deploy your configured agent to the Vertex AI Reasoning Engine:
 ```bash
@@ -166,7 +166,7 @@ Once deployment is complete, the console will print your unique **Agent Endpoint
 
 ---
 
-## 🎯 Testing & Playground
+## Testing & Playground
 
 Once deployed, navigate to the **Vertex AI Agent Studio Playground** or the **Gemini Enterprise console** to interact with your agent.
 
