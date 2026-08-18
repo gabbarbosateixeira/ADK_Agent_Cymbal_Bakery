@@ -1,4 +1,3 @@
-```markdown
 # 🤖 Cymbal Catering Agent: ADK & Agent Runtime Deployment
 
 This repository demonstrates how to build and deploy an enterprise-grade AI assistant utilizing the **Google Agent Development Kit (ADK)** and the **Agent Runtime (Reasoning Engine)**.
@@ -27,7 +26,7 @@ In the codebase (`agent.py`), the following mechanism handles tool integration d
 mcp_toolset = registry.get_mcp_toolset(
     f"projects/{PROJECT_ID}/locations/us-central1/mcpServers/{MCP_SERVER_NAME}"
 )
-```
+
 
 #### Under the Hood:
 1. **Dynamic Resolution:** Rather than hardcoding a server URL or API endpoints, the ADK uses the `AgentRegistry` client to dynamically query the Central Registry at runtime. 
